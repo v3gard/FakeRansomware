@@ -42,9 +42,9 @@ namespace FakeRansomware
         }
         private async void Form1_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
             DateTime appStarted = DateTime.Now;
             await Task.Run(() => startCountdown(appStarted.AddDays(1)));
             this.Close();
