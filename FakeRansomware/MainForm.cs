@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace FakeRansomware
 {
-    public partial class Form1 : Form
+    public partial class kthxbai : Form
     {
         bool stopCountdown = false;
 
-        public Form1()
+        public kthxbai()
         {
             InitializeComponent();
         }
@@ -42,9 +42,22 @@ namespace FakeRansomware
         }
         private async void Form1_Load(object sender, EventArgs e)
         {
-            //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            // Maximize main form
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+            // For each additional screen, black it out
+            foreach (var screen in Screen.AllScreens)
+            {
+                if (! screen.Primary)
+                {
+                    Form f = new BlackWindow(screen);
+                    f.Show();
+                }
+            }
+
+            // Start timer
             DateTime appStarted = DateTime.Now;
             await Task.Run(() => startCountdown(appStarted.AddDays(1)));
             this.Close();
@@ -52,9 +65,9 @@ namespace FakeRansomware
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "1234")
+            if (tboxCode.Text == "1234")
             {
-                textBox1.BackColor = Color.Green;
+                tboxCode.BackColor = Color.Green;
                 stopCountdown = true;
             }
         }

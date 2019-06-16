@@ -117,14 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblHeader.Text" xml:space="preserve">
-    <value>Hello.
-
-Your harddrive is now encrypted. DO NOT REBOOT THE COMPUTER.
-
-When the timer expires or the system is rebooted, the encryption key is lost - and your data is GONE.
-To unlock and recover your data, transfer 0.01 BTC (Bitcoin) to 1VoatABRHtKNngkdXEjabR77b53LETtpyT.
-
-When payment is received, the unlock code will be returned to you.</value>
-  </data>
 </root>
