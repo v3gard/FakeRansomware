@@ -47,10 +47,12 @@ namespace FakeRansomware
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 
+            Screen startupScreen = Screen.FromControl(this);
+
             // For each additional screen, black it out
             foreach (var screen in Screen.AllScreens)
             {
-                if (! screen.Primary)
+                if (screen != startupScreen)
                 {
                     Form f = new BlackWindow(screen);
                     f.Show();
